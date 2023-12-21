@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SakuraVoyages</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.mix.css">
+</head>
+<body>
+
+<header>
+    <a href="#" class="brand">SakuraVoyages</a>
+    <div class="menu-btn"></div>
+    <div class="navigation">
+        <div class="navigation-items">
+            <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<section class="home">
+    <video class="video-slide active" src="japan6.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="japan7.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="japan3.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="japan4.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="japan5.mp4" autoplay muted loop></video>
+    <div class="content active">
+        <h1>Japan<br><span></span></h1>
+        <p>Konnichiwa! Join me on a mesmerizing journey through Japan—a country where tradition meets innovation, cherry blossoms bloom, and Mount Fuji stands tall as a symbol of majestic beauty. From Tokyo's vibrant energy to Kyoto's tranquil temples, let's discover the rich tapestry of Japan's culture, cuisine, and stunning landscapes together!</p>
+    </div>
+    <div class="content">
+        <h1>Mount<br><span>Fuji</span></h1>
+        <p>Embark on an odyssey to Mount Fuji, an ancient sentinel towering over Japan's landscape. Its snow-capped peak pierces the sky, shrouded in mystique and folklore. Brace yourself for a journey through its rugged trails, enchanted forests, and vistas that paint an unforgettable portrait of natural grandeur and spiritual resonance.</p>
+    </div>
+    <div class="content">
+        <h1>Sagano Bamboo<br><span>Forest</span></h1>
+        <p>Step into a world of ethereal beauty at the Sagano Bamboo Forest in Kyoto, Japan. As sunlight filters through towering bamboo groves, a symphony of rustling leaves orchestrates an enchanting ambiance. Wander through this serene maze, where nature's tranquility and ancient whispers converge, inviting you on a sensory journey unlike any other.</p>
+    </div>
+    <div class="content">
+        <h1>Shibuya<br><span></span></h1>
+        <p>Welcome to Tokyo, a bustling metropolis where tradition meets innovation. Skyscrapers scrape the sky as neon lights paint the night, creating a captivating urban tapestry. Dive into a city that never sleeps, where ancient temples stand amidst modern marvels, and every street corner unveils a new adventure waiting to be explored.</p>
+    </div>
+    <div class="content">
+        <h1>Fushimi Inari<br><span>Taisha</span></h1>
+        <p>Enter the mesmerizing world of Fushimi Inari Taisha in Kyoto, Japan. A pathway adorned with thousands of vibrant vermilion torii gates winds through lush forests, beckoning you into a sacred realm. Amidst whispers of ancient spirits, embark on a pilgrimage suffused with beauty, spirituality, and a timeless allure that captures the essence of Japan's rich cultural heritage.</p>
+    </div>
+    <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    // JavaScript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+    });
+
+    // JavaScript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual) {
+        btns.forEach((btn) => {
+            btn.classList.remove("active");
+        });
+
+        slides.forEach((slide) => {
+            slide.classList.remove("active");
+        });
+
+        contents.forEach((content) => {
+            content.classList.remove("active");
+        });
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+            sliderNav(i);
+        })
+    });
+</script>
+</body>
+</html>

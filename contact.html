@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SakuraVoyages</title>
+    <link rel="stylesheet" href="Contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.mix.css">
+</head>
+<body>
+
+<header>
+    <a href="#" class="brand">SakuraVoyages</a>
+    <div class="menu-btn"></div>
+    <div class="navigation">
+        <div class="navigation-items">
+            <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<section class="home">
+    <video class="video-slide active" src="japan6.mp4" autoplay muted loop></video>
+    <div class="content active">
+        <h1>CONTACT<br><span></span></h1>
+        <p>We would love to respond to your queries and help you succed.<br>Feel free to get in tourch with us</p>
+        <div class="contact-box">
+        <div class="contact-left">
+            <h3>Send you request</h3>
+            <form>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>Name</label>
+                        <input type="text" placeholder="Sunny Macabinta">
+                    </div>
+                    <div class="input-row">
+                    <div class="input-group">
+                        <label>Phone</label>
+                        <input type="text" placeholder="+639134573021">
+                    </div>
+                </div>
+                <div class="input-row">
+                <div class="input-group">
+                        <label>Email</label>
+                        <input type="email">
+                        <input type="text" placeholder="SunnyMacabinta@gmail.com">
+                    </div>
+                    <div class="input-row">
+                    <div class="input-group">
+                        <label>Subject</label>
+                        <input type="text" placeholder="Subject Demo">
+                    </div>
+                </div>
+            </form>
+            <label>Message</label>
+            <textarea rows="5" placeholder="Your Message"></textarea>
+            <button type="Submit">SEND</button>
+        </div>
+        <div class="contact-right">
+            <h3>Reach us</h3>
+            <table>
+                <tr>
+                    <td>Email</td>
+                    <td>SunnyMacabinta@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>+639134573021</td>
+                </tr>
+                <tr>
+                    <td>Adress</td>
+                    <td>#212, Ground Floor, 7th cross<br>
+                        In ohayo, Some Road, Ohio<br>
+                    </td>
+                </tr>
+            </table>
+    <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+</section>
+
+<script type="text/javascript">
+    // JavaScript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+    });
+
+    // JavaScript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual) {
+        btns.forEach((btn) => {
+            btn.classList.remove("active");
+        });
+
+        slides.forEach((slide) => {
+            slide.classList.remove("active");
+        });
+
+        contents.forEach((content) => {
+            content.classList.remove("active");
+        });
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+            sliderNav(i);
+        })
+    });
+</script>
+</body>
+</html>
